@@ -1,7 +1,12 @@
 package ojclient
 
 const (
-	ServerRegisterPath = "/server/register"
+	ServerRegisterPath     = "/server/register"
+	ServerUnregisterPath   = "/server/unregister"
+	ServerHeartbeatPath    = "/server/heartbeat"
+	ServerSubmitLogsPath   = "/server/submit-logs"
+	ServerFetchTopicPath   = "/server/fetch-topic"
+	ServerReportStatusPath = "/server/report-status"
 )
 
 // Config of client
@@ -46,6 +51,11 @@ func (c *Client) Start(cfg *Config) error {
 	// start task queue
 
 	return nil
+}
+
+// Stop client
+func (c *Client) Stop() {
+
 }
 
 func Start(cfg *Config) error {
